@@ -23,6 +23,10 @@ void pop(){
 }
 
 void display(){
+	if(top == -1){
+		printf("Stack is empty\n");
+		return;
+	}
 	for(int i=0; i<=top; i++){
 		printf("%d\t", stack[i]);
 	}

@@ -1,11 +1,7 @@
 #include <stdio.h>
 
-int shorted(int arr[], int n){
-	int num = arr[0];
-	for(int i = 1; i<n; i++){
-		if(arr[i]<num) return 0;
-		num = arr[i];
-	}
+int sorted(int arr[], int n){
+	for(int i = 0; i<n-1; i++) if(arr[i]>arr[i+1]) return 0;
 	return 1;
 }
 
@@ -33,11 +29,11 @@ void main(){
 	printf("Enter the target value: ");
 	scanf("%d", &k);
 	
-	if(shorted(arr, n) != 1){
-		printf("Array is not shorted\n");
+	if(sorted(arr, n) != 1){
+		printf("Array is not sorted\n");
 		return;
 	}
-	printf("Arrray is shorted\n");
+	printf("Arrray is sorted\n");
 	
 	int index = binary_search(arr, n, k);
 	if(index == -1){
